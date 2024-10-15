@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal, WritableSignal } from '@angular/core';
 import { NavbarComponent } from "../../components/navbar/navbar.component";
 import { ProductsService } from '../../services/products.service';
 import { Product } from '../../models/products.model';
@@ -13,7 +13,7 @@ import { NgxSpinnerModule, NgxSpinnerService } from "ngx-spinner";
   styleUrl: './products.component.scss'
 })
 export class ProductsComponent {
-  products!:Product[];
+  products:WritableSignal<Product[]> = signal<Product[]>([] as Product[]);
   spinnerService = inject(NgxSpinnerService);
   private endSubs$:Subject<any> = new Subject();
   constructor(
@@ -29,7 +29,7 @@ export class ProductsComponent {
     this.productService.getAllProducts().pipe(takeUntil(this.endSubs$)).subscribe({
       next : (allProducts:Product[]) => {
         this.spinnerService.hide()
-        this.products = allProducts;
+        this.products.set(allProducts);
       }
     })
   }

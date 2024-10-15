@@ -1,4 +1,4 @@
-import { Component, inject, input, Input } from '@angular/core';
+import { Component, inject, input, Input, signal, WritableSignal } from '@angular/core';
 import { NavbarComponent } from "../../components/navbar/navbar.component";
 import { ProductsService } from '../../services/products.service';
 import { Product } from '../../models/products.model';
@@ -16,7 +16,7 @@ export class ProductDetailsComponent {
   id = input<string>();
   private endSubs$:Subject<any> = new Subject();
   spinnerService = inject(NgxSpinnerService);
-  productDetails!:Product;
+  productDetails:WritableSignal<Product> = signal<Product>({} as Product);
   constructor(
     private productServices:ProductsService
   ){}
@@ -33,7 +33,7 @@ export class ProductDetailsComponent {
         {
           next : (details:Product) => {
             this.spinnerService.hide();
-            this.productDetails = details;
+            this.productDetails.set(details);
           }
         }
       )
