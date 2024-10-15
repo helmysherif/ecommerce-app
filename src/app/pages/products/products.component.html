@@ -1,0 +1,19 @@
+<section class="products-section">
+  <app-navbar></app-navbar>
+  <div class="products-section-main-img">
+    <img src="images/img1.jpg" alt="">
+    <p>Products</p>
+  </div>
+  <div class="container mt-5">
+    <div class="row">
+      @for (product of products; track product.id) {
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <app-product-item 
+            [productItem]="product"
+          />
+        </div>
+      }
+    </div>
+  </div>
+</section>
+<ngx-spinner type="ball-scale-multiple"></ngx-spinner>

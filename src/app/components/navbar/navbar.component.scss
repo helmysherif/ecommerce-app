@@ -1,0 +1,37 @@
+@import "../../styles/fonts";
+@import "../../styles/colors";
+.navbar
+{
+  .navbar-nav
+  {
+    gap: 20px;
+    .nav-link
+    {
+      @extend .poppins-semibold;
+      text-transform: capitalize;
+      font-size: 17px;
+      cursor: pointer;
+    }
+  }
+  .navbar-collapse
+  {
+    flex-grow: 0;
+  }
+  .cart-section
+  {
+    display: flex;
+    align-items: center;
+    gap:25px;
+    .cart-btn
+    {
+      padding: 0;
+      padding-left: 20px;
+    }
+    p
+    {
+      margin: 0;
+      font-size: 17px;
+      text-transform: capitalize;
+    }
+  }
+}

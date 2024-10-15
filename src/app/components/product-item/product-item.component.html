@@ -1,0 +1,14 @@
+<div class="product-item">
+  <div class="product-item-image">
+    <img [src]="productItem().image" class = "w-100" height="330" alt="">
+    <div class="product-item-image-cart-btn">
+      <button>add to card</button>
+    </div>
+  </div>
+  <p class="product-item-title" [routerLink]="'/products/' + productItem().id">
+    {{productItem().title}}
+  </p>
+  <p class="product-item-price">
+    {{productItem().price | currency:"USD"}}
+  </p>
+</div>

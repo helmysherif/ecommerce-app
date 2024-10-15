@@ -1,0 +1,77 @@
+@import "../../styles/fonts";
+@import "../../styles/colors";
+.product-details
+{
+  &-container
+  {
+    &-product-img
+    {
+      width:400px;
+    }
+    &-info
+    {
+      .title
+      {
+        text-transform: capitalize;
+        @extend .poppins-semibold;
+        font-size: 30px;
+        margin: 0;
+      }
+      .price
+      {
+        @extend .poppins-semibold;
+        font-size: 20px;
+        margin-top: 20px;
+        margin-bottom: 0;
+        color:#009cff;
+      }
+      .desc
+      {
+        text-transform: capitalize;
+        @extend .poppins-medium;
+        font-size: 17px;
+        text-align: justify;
+        margin-top: 20px;
+      }
+      .add-cart-container
+      {
+        margin-top: 30px;
+        input
+        {
+          height: 50px;
+          width:100px;
+          outline: 0;
+          box-shadow: none;
+          padding:0 10px;
+          font-size: 18px;
+          margin-right: 20px;
+        }
+        button
+        {
+          background-color: #282828;
+          border:0;
+          @extend .poppins-semibold;
+          color:#FFF;
+          height: 50px;
+          cursor: pointer;
+          padding:10px 20px;
+          text-transform: capitalize;
+          position: relative;
+          top: -2px;
+        }
+      }
+      .categroy
+      {
+        @extend .poppins-medium;
+        color:#009cff;
+        text-transform: capitalize;
+        span
+        {
+          color:#282828;
+          display: inline-block;
+          margin-left:10px;
+        }
+      }
+    }
+  }
+}
