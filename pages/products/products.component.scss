@@ -1,0 +1,25 @@
+@import "../../styles/fonts";
+@import "../../styles/colors";
+.products-section
+{
+  &-main-img
+  {
+    text-align: center;
+    position: relative;
+    img
+    {
+      width: 100%;
+    }
+    p
+    {
+      margin: 0;
+      position: absolute;
+      top:50%;
+      color:var(--white-color);
+      font-size: 40px;
+      @extend .poppins-black;
+      transform: translateY(-50%);
+      left: 6%;
+    }
+  }
+}

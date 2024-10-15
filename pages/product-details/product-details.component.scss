@@ -1,0 +1,12 @@
+@import "../../styles/fonts";
+@import "../../styles/colors";
+.product-details
+{
+  &-container
+  {
+    &-product-img
+    {
+      width:500px;
+    }
+  }
+}
